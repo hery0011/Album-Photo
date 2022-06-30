@@ -20,11 +20,8 @@
 	$ObjectName = new DateTime();
 	$date_insertion = $ObjectName->format('d/m/Y'); 
 
-
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "album_photo";
+	/*configuration base*/
+	require('config.php');
 
 	if (!empty($file_nom)) {
 
