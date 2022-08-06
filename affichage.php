@@ -60,22 +60,25 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
 	<title></title>
+	<style type="text/css">
+		body{
+			background-image: url('photo/fond1.jpg');
+		}
+	</style>
 </head>
 <body>
 
 	<div class="row">
 		<div class="col-md-12">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			  <!-- Brand -->
-			  <a class="navbar-brand" href="#">Logo</a>
 
 			  <!-- Links -->
 			  <ul class="navbar-nav">
 			    <li class="nav-item">
-			      <a class="nav-link" href="insertion.html">Insertion Photo</a>
-			    </li>
+			      <a class="nav-link btn btn-primary" href="insertion.html">Insertion Photo</a>
+			    </li>&nbsp;
 			    <li class="nav-item">
-			      <a class="nav-link" href="affichage.php">Voir mon album</a>
+			      <a class="nav-link btn btn-primary" href="affichage.php">Voir mon album</a>
 			    </li>
 
 			  </ul>
@@ -113,8 +116,8 @@
 							 while($row = $result->fetch_assoc()) {
 					?>
 						<div class="gallery">
-						  	<a href="<?php echo $row['file_url'] ?>">
-						    	<img src="<?php echo $row['file_url'] ?>" width="250" height="250">
+						  	<a target="_blank" href="<?php echo $row['file_url'] ?>">
+						    	<img src="<?php echo $row['file_url'] ?>">
 						  	</a>
 						</div>
 					<?php } }?>
