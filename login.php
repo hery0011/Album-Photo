@@ -21,6 +21,6 @@
 		session_start();
 		$_SESSION['id'] = $result['id'];
 	}else{
-		header('location: index.html');
+		header('location: index.php');
 	}
 ?>

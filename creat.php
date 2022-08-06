@@ -17,7 +17,7 @@
 
 	$sql = "INSERT INTO user (nom, prenom, mail, mdp) VALUES ('$nom', '$prenom', '$mail', '$mdp')";
 	if ($conn->query($sql) === TRUE) {
-	  header('location: index.html');
+	  header('location: index.php');
 	} else {
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}

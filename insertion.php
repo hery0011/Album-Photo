@@ -1,3 +1,12 @@
+<?php 
+	/*session start*/
+	session_start();
+	if(isset($_SESSION['id']) && !is_null($_SESSION['id'])) {
+		$UserId = $_SESSION['id'];
+	} else {
+		header('location: index.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +17,7 @@
 	<title></title>
 	<style type="text/css">
 		body{
-			background-image: url('photo/fond.jpg');
+			background-image: url('photo/fond2.png');
 		}
 	</style>
 </head>
@@ -19,13 +28,15 @@
 			 
 			  <!-- Links -->
 			  <ul class="navbar-nav">
+			  	<li class="nav-item" style="text-align:left;">
+			      <a class="nav-link btn btn-danger" href="index.php">Quiter</a>
+			    </li>&nbsp;
 			    <li class="nav-item">
-			      <a class="nav-link btn btn-primary" href="insertion.html">Insertion Photo</a>
+			      <a class="nav-link btn btn-primary" href="insertion.php">Insertion Photo</a>
 			    </li>&nbsp;
 			    <li class="nav-item">
 			      <a class="nav-link btn btn-primary" href="affichage.php">Voir mon album</a>
 			    </li>
-
 			  </ul>
 			</nav>
 		</div>
@@ -49,6 +60,5 @@
 		</div>
 		<div class="col-md-4"></div>
 	</div>
-
 </body>
 </html>

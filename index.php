@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(isset($_SESSION['id']) && !is_null($_SESSION['id'])) {
+	session_destroy();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +13,11 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
 	<title></title>
+	<style type="text/css">
+		body{
+			background-image: url('photo/fond.jpg');
+		}
+	</style>
 </head>
 <body>
 	<div class="row" style="margin-top:200px">
@@ -24,12 +36,11 @@
 			</form>
 
 			<div>
-				<a href="creationCompte.html">création compte</a>
+				<a href="creationCompte.html" style="color:white;">création compte</a>
 			</div>
 		</div>
 		
 		<div class="col-md-4"></div>
 	</div>
-
 </body>
 </html>

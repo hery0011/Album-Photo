@@ -4,7 +4,7 @@
 	if(isset($_SESSION['id']) && !is_null($_SESSION['id'])) {
 		$UserId = $_SESSION['id'];
 	} else {
-		header('location: index.html');
+		header('location: index.php');
 	}
 
 	/*recuperation fichier*/
@@ -36,7 +36,7 @@
 		VALUES ('$file_nom', '$file_dest', '$date_insertion', '$motCle', '$UserId')";
 		
 		if ($conn->query($sql) === TRUE) {
-		  header('location: insertion.html');
+		  header('location: insertion.php');
 		} else {
 		  echo "Error: " . $sql . "<br>" . $conn->error;
 		}
