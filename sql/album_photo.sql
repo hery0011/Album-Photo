@@ -32,7 +32,8 @@ CREATE TABLE `album` (
   `file_url` varchar(255) NOT NULL,
   `date_insertion` varchar(255) NOT NULL,
   `motCle` varchar(255) NOT NULL,
-  `userId` int(11) NOT NULL
+  `userId` int(11) NOT NULL,
+  `type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -34,6 +34,9 @@
 	    <li class="nav-item">
 	      <a class="nav-link" href="affichage.php">Album</a>
 	    </li>
+	     <li class="nav-item">
+	      <a class="nav-link" href="affichageVideo.php">Video</a>
+	    </li>
 	  </ul>
 	</div>
 
@@ -49,15 +52,45 @@
 
 	              <h2 class="fw-bold mb-5">Ampidiro ny sarinao</h2>
 
-	              <div class="form-outline form-white mb-4">
+	              <label>photo ou vidéo</label>
+	               <select id="choseSelect" onchange="verification()">
+ 				  	<option></option>
+	              	<option value="photo">photo</option>
+	              	<option value="video">video</option>
+	              </select><br><br><br>
+
+	              <div class="form-outline form-white mb-4" hidden id="photo">
 	                <input id="typeEmailX" type="file" name="fichier" class="form-control form-control-lg" />
 	                <label class="form-label" for="typeEmailX">votre photo</label>
+	              </div>
+
+	              <div class="form-outline form-white mb-4" hidden id="video">
+	                <input id="typeEmailX" type="file" accept="video/*" name="fichier" class="form-control form-control-lg" />
+	                <label class="form-label" for="typeEmailX">votre video</label>
 	              </div>
 
 	              <div class="form-outline form-white mb-4">
 	                <input type="text" name="motCle" id="typePasswordX" class="form-control form-control-lg" />
 	                <label class="form-label" for="typePasswordX">mot clé</label>
 	              </div>
+
+ 				 
+
+	              <script type="text/javascript">
+	              	function verification(){
+		              	var photo = document.getElementById("choseSelect").value;
+		              	
+		              	if (photo == 'photo') {
+		              		document.getElementById("photo").removeAttribute("hidden");
+		              		document.getElementById("video").setAttribute("hidden", "true");  
+		              	}
+
+		              	if(photo == 'video'){
+		              		document.getElementById("photo").setAttribute("hidden", "true"); 
+		              		document.getElementById("video").removeAttribute("hidden"); 
+		              	}
+	              	}
+	              </script>
 
 	              <button class="btn btn-outline-light btn-lg px-5" type="submit">Enregistrer</button>
 

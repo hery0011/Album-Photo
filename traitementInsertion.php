@@ -13,6 +13,9 @@
 	$file_type = $_FILES['fichier']['type'];
 	$file_tmp_name = $_FILES['fichier']['tmp_name'];
 	$file_dest = 'FILES/'.$file_nom;
+	$fileNameCmps = explode(".", $file_nom);
+	$fileExtension = strtolower(end($fileNameCmps));
+	/*max_file_uploads = 20;*/
 	move_uploaded_file($file_tmp_name, $file_dest);
 
 	$motCle = $_POST['motCle'];
@@ -33,8 +36,14 @@
 		  die("Connection failed: " . $conn->connect_error);
 		}
 
-		$sql = "INSERT INTO album (file_nom, file_url, date_insertion, motCle, userId)
-		VALUES ('$file_nom', '$file_dest', '$date_insertion', '$motCle', '$UserId')";
+		if ($fileExtension == 'mp4') {
+			$sql = "INSERT INTO album (file_nom, file_url, date_insertion, motCle, userId, type)
+			VALUES ('$file_nom', '$file_dest', '$date_insertion', '$motCle', '$UserId', 1)";
+		}else{
+			$sql = "INSERT INTO album (file_nom, file_url, date_insertion, motCle, userId, type)
+			VALUES ('$file_nom', '$file_dest', '$date_insertion', '$motCle', '$UserId', 0)";
+		}
+
 		
 		if ($conn->query($sql) === TRUE) {
 		  header('location: insertion.php');

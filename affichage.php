@@ -33,16 +33,16 @@
 
 	
 		if($motCle && !$daty) {
-			$sql = "SELECT * FROM album where motCle LIKE '%$motCle%' && userId = $UserId";
+			$sql = "SELECT * FROM album where motCle LIKE '%$motCle%' && userId = $UserId && type !=1";
 		}elseif($daty && !$motCle){
-			$sql = "SELECT * FROM album where date_insertion = '$daty' && userId = $UserId";
+			$sql = "SELECT * FROM album where date_insertion = '$daty' && userId = $UserId && type !=1";
 		}else{
-			$sql = "SELECT * FROM album where date_insertion = '$daty' && motCle LIKE '%$motCle%' && userId = $UserId";
+			$sql = "SELECT * FROM album where date_insertion = '$daty' && motCle && type !=1 LIKE '%$motCle%' && userId = $UserId";
 		}
 			
 	}
 	else{
-		$sql = "SELECT * FROM album where userId = $UserId ORDER BY id DESC LIMIT 21";
+		$sql = "SELECT * FROM album where userId = $UserId && type !=1 ORDER BY id DESC LIMIT 21";
 	}
 
 	
@@ -78,6 +78,9 @@
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link active" href="affichage.php">Album</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="affichageVideo.php">Video</a>
 	    </li>
 	  </ul>
 	</div>
@@ -116,6 +119,7 @@
 						    	<img src="<?php echo $row['file_url'] ?>">
 						  	</a>
 						</div>
+
 					<?php } }?>
 		</div>
 		<div class="col-md-1"></div>
