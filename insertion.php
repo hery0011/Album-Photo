@@ -22,43 +22,53 @@
 	</style>
 </head>
 <body>
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-			 
-			  <!-- Links -->
-			  <ul class="navbar-nav">
-			  	<li class="nav-item" style="text-align:left;">
-			      <a class="nav-link btn btn-danger" href="index.php">Quiter</a>
-			    </li>&nbsp;
-			    <li class="nav-item">
-			      <a class="nav-link btn btn-primary" href="insertion.php">Insertion Photo</a>
-			    </li>&nbsp;
-			    <li class="nav-item">
-			      <a class="nav-link btn btn-primary" href="affichage.php">Voir mon album</a>
-			    </li>
-			  </ul>
-			</nav>
-		</div>
+
+	<div class="container">
+	  <ul class="nav nav-tabs">
+	    <li class="nav-item">
+	      <a class="nav-link" href="index.php">déconnexion</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link active" href="insertion.php">Insertion</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="affichage.php">Album</a>
+	    </li>
+	  </ul>
 	</div>
 
-	<div class="row" style="margin-top: 100px;">
-		<div class="col-md-4"></div>
-		<div class="col-md-4 mt-3 cadre">
+	<form method="POST" action="traitementInsertion.php" enctype="multipart/form-data">
+	<section >
+	  <div class="container py-5 h-100">
+	    <div class="row d-flex justify-content-center align-items-center h-100">
+	      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+	        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+	          <div class="card-body p-5 text-center">
 
-			<h3 style="text-align: center; color: white;" class="mt-3">Enregistre ici votre photo</h3>
+	            <div class="mb-md-5 mt-md-4 pb-5">
 
-			<form method="POST" action="traitementInsertion.php" enctype="multipart/form-data">
-				<div>
-					<input type="file" name="fichier" class="mt-4">
-				</div>
-				<div>
-					<input type="text" name="motCle" class="form-control mt-2" placeholder="mot clé">
-				</div>
-				<input type="submit" name="" value="Enregistrer" class="btn btn-primary form-control mt-3 mb-5">
-			</form>
-		</div>
-		<div class="col-md-4"></div>
-	</div>
+	              <h2 class="fw-bold mb-5">Ampidiro ny sarinao</h2>
+
+	              <div class="form-outline form-white mb-4">
+	                <input id="typeEmailX" type="file" name="fichier" class="form-control form-control-lg" />
+	                <label class="form-label" for="typeEmailX">votre photo</label>
+	              </div>
+
+	              <div class="form-outline form-white mb-4">
+	                <input type="text" name="motCle" id="typePasswordX" class="form-control form-control-lg" />
+	                <label class="form-label" for="typePasswordX">mot clé</label>
+	              </div>
+
+	              <button class="btn btn-outline-light btn-lg px-5" type="submit">Enregistrer</button>
+
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+	</form>
 </body>
 </html>

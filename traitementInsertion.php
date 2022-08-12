@@ -8,6 +8,7 @@
 	}
 
 	/*recuperation fichier*/
+	ini_set('memory_limit', '96M');
 	$file_nom = $_FILES['fichier']['name'];
 	$file_type = $_FILES['fichier']['type'];
 	$file_tmp_name = $_FILES['fichier']['tmp_name'];

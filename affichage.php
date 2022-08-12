@@ -68,28 +68,22 @@
 </head>
 <body>
 
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-			  <!-- Links -->
-			  <ul class="navbar-nav">
-			  	<li class="nav-item" style="text-align:left;">
-			      <a class="nav-link btn btn-danger" href="index.php">Quiter</a>
-			    </li>&nbsp;
-			    <li class="nav-item">
-			      <a class="nav-link btn btn-primary" href="insertion.php">Insertion Photo</a>
-			    </li>&nbsp;
-			    <li class="nav-item">
-			      <a class="nav-link btn btn-primary" href="affichage.php">Voir mon album</a>
-			    </li>
-			  </ul>
-			</nav>
-		</div>
+	<div class="container">
+	  <ul class="nav nav-tabs">
+	    <li class="nav-item">
+	      <a class="nav-link" href="index.php">déconnexion</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="insertion.php">Insertion</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link active" href="affichage.php">Album</a>
+	    </li>
+	  </ul>
 	</div>
 
 
-	<div class="row mt-3">
+	<div class="row mt-5">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<form method="POST" action="">
