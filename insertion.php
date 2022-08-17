@@ -14,6 +14,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+	<!-- 
+	    RTL version
+	-->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+	<!-- Default theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+	<!-- Semantic UI theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+	<!-- Bootstrap theme -->
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+		<!-- include the style -->
+	<link rel="stylesheet" href="{PATH}/css/alertify.min.css" />
+	<!-- include a theme -->
+	<link rel="stylesheet" href="{PATH}/css/themes/default.min.css" />
 	<title></title>
 	<style type="text/css">
 		body{
@@ -65,7 +92,7 @@
 	              </div>
 
 	              <div class="form-outline form-white mb-4" hidden id="video">
-	                <input id="typeEmailX" type="file" accept="video/*" name="fichier" class="form-control form-control-lg" />
+	                <input id="typeEmailX" type="file" accept="video/*" name="fichier_video" class="form-control form-control-lg" />
 	                <label class="form-label" for="typeEmailX">votre video</label>
 	              </div>
 
@@ -92,7 +119,8 @@
 	              	}
 	              </script>
 
-	              <button class="btn btn-outline-light btn-lg px-5" type="submit">Enregistrer</button>
+	              <button class="btn btn-outline-light btn-lg px-5" onclick="sub()" type="submit">Enregistrer</button>
+	              
 
 	            </div>
 
