@@ -42,7 +42,7 @@
 			
 	}
 	else{
-		$sql = "SELECT * FROM album where userId = $UserId && type !=1 ORDER BY id DESC LIMIT 21";
+		$sql = "SELECT * FROM album where userId = $UserId && type !=1 ORDER BY id DESC LIMIT 32";
 	}
 
 	
