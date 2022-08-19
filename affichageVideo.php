@@ -114,7 +114,7 @@
 						if ($result->num_rows > 0) {
 							 while($row = $result->fetch_assoc()) {
 					?>
-						<video width="320" height="240" controls>
+						<video width="320" height="240" controls >
 							<source src="<?php echo $row['file_url'] ?>" type="video/mp4">
 						</video>
 

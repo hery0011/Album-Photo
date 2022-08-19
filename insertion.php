@@ -102,7 +102,6 @@
 	              </div>
 
  				 
-
 	              <script type="text/javascript">
 	              	function verification(){
 		              	var photo = document.getElementById("choseSelect").value;
@@ -119,8 +118,14 @@
 	              	}
 	              </script>
 
-	              <button class="btn btn-outline-light btn-lg px-5" onclick="sub()" type="submit">Enregistrer</button>
-	              
+	              <button class="btn btn-outline-light btn-lg px-5" onclick="Enregistrer()" type="submit">Enregistrer</button>
+	              <script type="text/javascript">
+	              	function Enregistrer(){
+	              		alertify.success('insertion avec success');
+
+	              	}
+	              	
+	              </script>
 
 	            </div>
 

@@ -15,11 +15,19 @@
 	$mail = $_POST['mail'];
 	$mdp = $_POST['mdp'];
 
-	$sql = "INSERT INTO user (nom, prenom, mail, mdp) VALUES ('$nom', '$prenom', '$mail', '$mdp')";
-	if ($conn->query($sql) === TRUE) {
-	  header('location: index.php');
-	} else {
-	  echo "Error: " . $sql . "<br>" . $conn->error;
+
+	$sqlSelect = "SELECT * FROM user where mail = '$mail'";
+	$resultSelect = $conn->query($sqlSelect);
+
+	if ($resultSelect->num_rows > 0 || $nom == '' || $prenom == '' || $mail == '' || $mdp == '') {
+		 header('location: creationCompte.html');
+	}else{
+		$sql = "INSERT INTO user (nom, prenom, mail, mdp) VALUES ('$nom', '$prenom', '$mail', '$mdp')";
+		if ($conn->query($sql) === TRUE) {
+		  header('location: index.php');
+		} else {
+		  echo "Error: " . $sql . "<br>" . $conn->error;
+		}
 	}
 
 ?>

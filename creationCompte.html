@@ -45,12 +45,14 @@
 	                  <div class="form-outline">
 	                    <input type="text" name="nom" id="form3Example1" class="form-control" />
 	                    <label class="form-label" for="form3Example1">First name</label>
+	                    <p id="errorNom" hidden style="color: red">ampidiro ny anaranao</p>
 	                  </div>
 	                </div>
 	                <div class="col-md-6 mb-4">
 	                  <div class="form-outline">
 	                    <input type="text" name="prenom" id="form3Example2" class="form-control" />
 	                    <label class="form-label" for="form3Example2">Last name</label>
+	                    <p id="errorPrenom" hidden style="color: red">ampidiro ny fanampin'anaranao</p>
 	                  </div>
 	                </div>
 	              </div>
@@ -59,27 +61,56 @@
 	              <div class="form-outline mb-4">
 	                <input type="email" name="mail" id="form3Example3" class="form-control" />
 	                <label class="form-label" for="form3Example3">Email address</label>
+	                <p id="errorMail" hidden style="color: red">ampidiro ny mail nao</p>
 	              </div>
 
 	              <!-- Password input -->
 	              <div class="form-outline mb-4">
 	                <input type="password" name="mdp" id="form3Example4" class="form-control" />
 	                <label class="form-label" for="form3Example4">Password</label>
+	                <p id="errorMdp" hidden style="color: red">ampidiro ny kaodinao</p>
 	              </div>
 
-	              <!-- Checkbox -->
-	              <!-- <div class="form-check d-flex justify-content-center mb-4">
-	                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-	                <label class="form-check-label" for="form2Example33">
-	                  Subscribe to our newsletter
-	                </label>
-	              </div> -->
-
 	              <!-- Submit button -->
-	              <button type="submit" class="btn btn-primary btn-block mb-4">
+	              <button type="submit" onmouseenter="save()" class="btn btn-primary btn-block mb-4">
 	                Sign up
 	              </button>
 	            </form>
+
+	            <script type="text/javascript">
+	            	function save(){
+		              	var nom = document.getElementById("form3Example1").value;
+		              	var prenom = document.getElementById("form3Example2").value;
+		              	var mail = document.getElementById("form3Example3").value;
+		              	var mdp = document.getElementById("form3Example4").value;
+
+		              	if (nom == '') {
+		              		document.getElementById("errorNom").removeAttribute("hidden");
+		              	}else{
+		              		document.getElementById("errorNom").setAttribute("hidden", "true");  
+		              	}
+
+
+		              	if (prenom == '') {
+		              		document.getElementById("errorPrenom").removeAttribute("hidden");
+		              	}else{
+		              		document.getElementById("errorPrenom").setAttribute("hidden", "true");  
+		              	}
+
+		              	/*if (mail == '') {
+		              		document.getElementById("errorMail").removeAttribute("hidden");
+		              	}else{
+		              		document.getElementById("errorMail").setAttribute("hidden", "true");  
+		              	}
+
+		              	if (mdp == '') {
+		              		document.getElementById("errorMdp").removeAttribute("hidden");
+		              	}else{
+		              		document.getElementById("errorMdp").setAttribute("hidden", "true");  
+		              	}*/
+
+		              }
+	            </script>
 	            <div>
 	              <p class="mb-0">Retour <a href="index.php" style="color: blue">Sign In</a>
 	              </p>
